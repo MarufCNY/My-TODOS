@@ -25,7 +25,7 @@ const resetBtn = document.getElementById("reset-btn")
 
       //TODO: VISUAL FEEDBACK: STRIKE-THROUGH WHEN COMPLETED
       textSpan.style.textDecoration = todo.completed ? 'line-through' : "";
-      textSpan.style.color = todo.completed ? 'maroon' : "";
+      textSpan.style.color = todo.completed ? '#0c0c0c' : "";
 
       saveTodos();
     })
@@ -114,8 +114,10 @@ function resetTodo() {
        render();         // Re-render the list
        saveTodos();      // Save the updated todos
    }
-   console.warn('--------------- Reseted TODO Data & cleaned the History ---------------');
+   let warning = '💔The Day Everything Forgot💔 There was once a tiny world inside your screen — a world made of reminders, lists, and little unfinished dreams. Each task had a name. Each checkbox had purpose. “Buy milk.” “Finish project.” “Call mom.” They weren’t just words — they were memories of moments that mattered. Every day, they waited for you. Some proudly wore their checkmarks like medals of honor. Others still dreamed of completion, whispering, “Tomorrow. He’ll finish me tomorrow.” Then one day, you hovered over the button. That bright, shiny, harmless-looking Reset button. They felt the tremor before it happened. The ground beneath their lines of code started to quake. “Wait—what’s he doing?” said Plan Vacation 🏖. “Maybe it’s just a glitch,” whispered Drink Water 💧. But you clicked it. And in a flash of white, everything went quiet. No checkmarks. No deadlines. No notes about ideas or goals. Just… emptiness. The world of tasks — gone. All their tiny digital lives erased, as if they never existed at all. And somewhere, deep in the silence of your console, a lonely echo remained: > “We were here once. You just forgot.'
+   console.warn('%c' + warning, 'font-style: italic; font-weight: bold; font-family: "fantasy"; color: #ff3e52; background-color: #0c0c0c; padding: 10px; border: 2px solid rgb(255, 98, 113);');
 }
+
 
 // Attach event listener to the reset button
 resetBtn.addEventListener('click', resetTodo);
