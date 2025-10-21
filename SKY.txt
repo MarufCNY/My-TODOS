@@ -1,0 +1,14 @@
+(!!, double not , convert a boolean equivalent value to a exact boolean)
+suppose,  
+const str = null >>> undefined
+!str >>> true
+!!str >>> false
+(make truthy value to falsy value, vice-versa)
+
+|when we send a object to a function that means we are sending reference of that object there|
+
+|todos.splice(index, 1) , it removes 1 item from that index|
+
+
+
+
