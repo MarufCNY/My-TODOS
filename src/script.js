@@ -1,7 +1,8 @@
 // SELECT DOM ELEMENTS 
-const input = document.getElementById("input_todos")
-const addBtn = document.getElementById("add_btn")
-const list = document.getElementById("todo_list")
+const input = document.getElementById("input-todos")
+const addBtn = document.getElementById("add-btn")
+const list = document.getElementById("todo-list")
+const resetBtn = document.getElementById("reset-btn")
 //TRY TO LOAD SAVED TODOS FROM LOCAL STORAGE(if any)
  const saved = localStorage.getItem("todos");
  const todos = saved ? JSON.parse(saved) : [];
@@ -37,12 +38,13 @@ const list = document.getElementById("todo_list")
       textSpan.style.textDecoration = 'line-through';
    }
       //ADD DOUBLE CLICK EVENT LISTNER TO EDIT THE TODO
-      textSpan.addEventListener('dblclick', ()=>{
-         const newText = prompt("Edit Todo", todo.text)
-         if(newText == null){
-            todo.text = newText.trim()
-            textSpan.textContent = todo.text
-            saveTodos()
+      textSpan.addEventListener('dblclick', ()=>{ 
+
+         const newText = prompt("Edit Todo", todo.text);
+         if (newText !== null && newText.trim() !== "") {
+            todo.text = newText.trim();
+            textSpan.textContent = todo.text;
+            saveTodos();
          }
       })
 
@@ -51,7 +53,7 @@ const list = document.getElementById("todo_list")
       delBtn.textContent = "Delete"
       delBtn.addEventListener('click', ()=>{
          todos.splice(index, 1)
-         render()
+         render() //FOR REMOVING TODO FROM DOM
          saveTodos()
       })
 
@@ -84,14 +86,36 @@ const list = document.getElementById("todo_list")
  
 
  //PUSH A NEW TODO OBJECT
-   todos.push({text, completed: false});
+   todos.push({text: text, completed: false});
    input.value = " ";
    render()
-   saveTodos()
+   saveTodos();
 
 }
 
 
 //ATTACH EVENT LISTENER TO THE ADD BUTTON
 addBtn.addEventListener('click', addTodo)
+input.addEventListener('keypress', (e)=>{
+   if(e.key === 'Enter'){
+      addTodo()
+   }
+})
 render()
+
+
+// RESET TODO FUNCTIONALITY
+function resetTodo() {
+   const yess = prompt(`Type "Yes" to reset all TODO Data`);
+   
+   if (yess.toUpperCase() === "YES") {
+       // If the user type "Yes" at any case, reset the todos
+       todos.length = 0; // Clear the array
+       render();         // Re-render the list
+       saveTodos();      // Save the updated todos
+   }
+   console.warn('--------------- Reseted TODO Data & cleaned the History ---------------');
+}
+
+// Attach event listener to the reset button
+resetBtn.addEventListener('click', resetTodo);

@@ -4,13 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My TODOS</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <h2>MY TODOS</h2>
     <p>Welcome to TODO list. Double click to edit TODO.</p>
-    <input type="text" placeholder="Input todos and press Add/Enter" id="input_todos">
-    <button id="add_btn">Add</button>
-    <ul id="todo_list"></ul>
+    <input type="text" placeholder="Input todos and press Add/Enter" id="input-todos">
+
+    <div id="btn">
+    <button id="add-btn">Add</button>
+    <button id="reset-btn">Reset</button>
+    </div>
+
+    <ul id="todo-list"></ul>
 
     <script src="script.js"></script>
 </body>
