@@ -29,7 +29,7 @@ p{
 }
 
 #input-todos{
-  width: 49%;
+  width: 360px;
   height: 35px;
   margin-top: 8px;
   font-size: 15px;
@@ -69,14 +69,14 @@ p{
   /* list-style: none; */
   margin-top: 14px;
   padding: 10px 30px;
-  width: 360px;
+  width: 345px;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 16px;
   backdrop-filter: blur(15px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   font-size: 18px;
-  width: 48%;
+  
 }
 
 #todo-list li{
@@ -151,9 +151,9 @@ p{
     padding-top: -5px;
   }
   #todo-input {
-    width: 49%;
+    width: 200px;
   }
   #todo-list {
-    width: 48%;
+    width: 300px;
   }
 }
