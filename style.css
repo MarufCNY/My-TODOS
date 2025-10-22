@@ -125,7 +125,7 @@ p{
 
 /* Checkbox styling */
 #todo-list input[type="checkbox"] {
-  accent-color: #38ed24;
+  accent-color: #2bdc17;
   transform: scale(1.4);
   margin-right: 10px;
 }
