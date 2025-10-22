@@ -128,3 +128,32 @@ p{
   transform: scale(1.4);
   margin-right: 10px;
 }
+
+#todo-list li {
+  animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 480px) {
+  body {
+    padding-top: -5px;
+  }
+  #todo-input {
+    width: 49%;
+  }
+  #todo-list {
+    width: 48%;
+  }
+}
